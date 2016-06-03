@@ -1,33 +1,25 @@
 var express = require('express');
-var execFileSync = require('child_process').execFileSync;
+var child_process = require('child_process');
 
 var app = express();
 
 app.get('/', function (req, res) {
-    execFileSync('./run.sh', function(err, stdout, stderr){
-        if (err instanceof Error) {
-            res.send('Error','\n', '\n<hr/>', err);
-        }
-        else{
-            res.send('Hello World!','\n<hr/>', stdout, '\n<hr/>', stderr);
-        }
+    var str = child_process.execFileSync('./run.sh').toString();
 
-    });
+    res.send(str);
+    //res.send('Hello World!');
+
 
 
 });
 
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
-    execFileSync('./run.sh', function(err, stdout, stderr){
-            if (err instanceof Error) {
-            console.error(err);
-            throw err;
-        }
-        console.log('################################################');
-        console.log(stdout + '################################################');
+    var str = child_process.execFileSync('./run.sh').toString();
 
-    });
+    console.log('################################################');
+    console.log(str + '################################################');
+
 });
 
 

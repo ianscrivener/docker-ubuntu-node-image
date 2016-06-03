@@ -3,4 +3,4 @@ date
 hostname
 domainname
 grep nameserver /etc/resolv.conf
-/bin/ip addr | grep "inet "
+ip addr | grep "inet "
