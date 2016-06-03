@@ -1,15 +1,15 @@
 var express = require('express');
-var execFile = require('child_process').execFile;
+var execFileSync = require('child_process').execFileSync;
 
 var app = express();
 
 app.get('/', function (req, res) {
-    execFile('./run.sh', function(err, stdout, stderr){
+    execFileSync('./run.sh', function(err, stdout, stderr){
         if (err instanceof Error) {
-            res.send('Error','\n', err);
+            res.send('Error','\n', '\n<hr/>', err);
         }
         else{
-            res.send('Hello World!','\n', stdout);
+            res.send('Hello World!','\n<hr/>', stdout, '\n<hr/>', stderr);
         }
 
     });
