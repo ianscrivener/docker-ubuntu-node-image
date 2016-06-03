@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:6.2
+FROM ianscrivener/ubuntu_node:16.04_6.x
 
 MAINTAINER Ian Scrivener <docker@zilogy.asia>
 
@@ -6,9 +6,6 @@ ENV NODE_PORT 3000
 
 # Add the files
 ADD root /
-
-# If you have native dependencies, you'll need extra tools
-RUN apk add --no-cache make gcc g++ python
 
 WORKDIR /app
 

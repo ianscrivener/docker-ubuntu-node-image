@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 docker run --rm \
-    --name helloworld-alpine-node \
+    --name helloworld-ubuntu-node \
     -p 3000:3000 \
-    ianscrivener/helloworld-alpine-node:6.2 \
+    ianscrivener/helloworld-ubuntu-node:16.04_6.x \
     node app.js
 

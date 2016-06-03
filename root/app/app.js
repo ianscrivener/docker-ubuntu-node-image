@@ -1,11 +1,20 @@
 var express = require('express');
-var exec = require('child_process').exec;
 var execFile = require('child_process').execFile;
 
 var app = express();
 
 app.get('/', function (req, res) {
-    res.send('Hello World!');
+    execFile('./run.sh', function(err, stdout, stderr){
+        if (err instanceof Error) {
+            res.send('Error','\n', err);
+        }
+        else{
+            res.send('Hello World!','\n', stdout);
+        }
+
+    });
+
+
 });
 
 app.listen(3000, function () {
