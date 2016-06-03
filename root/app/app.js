@@ -4,10 +4,9 @@ var child_process = require('child_process');
 var app = express();
 
 app.get('/', function (req, res) {
-    var str = child_process.execFileSync('./run.sh').toString();
+    var str = '<h1>Hello World</h1><pre>' + child_process.execFileSync('./run.sh').toString() +'</pre>';
 
     res.send(str);
-    //res.send('Hello World!');
 
 
 
