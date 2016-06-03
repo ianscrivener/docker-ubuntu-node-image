@@ -19,7 +19,7 @@ app.get('/', function (req, res) {
 
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
-    execFile('./run.sh', function(err, stdout, stderr){
+    execFileSync('./run.sh', function(err, stdout, stderr){
             if (err instanceof Error) {
             console.error(err);
             throw err;
