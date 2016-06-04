@@ -1,15 +1,13 @@
-# docker-helloworld-ubuntu-node
-A simple hello world node webserver on Ubuntu in Docker
-
-
+# docker-ubuntu-node-image
+Build a Docker image with Ubuntu 16.04 and node.js 6.x  
 
 
 
 ####Quickstart
 ```
-git clone https://github.com/ianscrivener/docker-ubuntu-node-quickstart
+git clone https://github.com/ianscrivener/docker-ubuntu-node-image
  
-cd docker-ubuntu-node-quickstart
+cd docker-ubuntu-node-image
 
 ./build
 
