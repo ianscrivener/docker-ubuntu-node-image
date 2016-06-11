@@ -6,6 +6,8 @@ var app = express();
 app.get('/', function (req, res) {
     var str = '<h1>Hello World</h1><pre>' + child_process.execFileSync('./run.sh').toString() +'</pre>';
 
+    // ToDo next log to influxdb - influxdb.weave.local
+    
     res.send(str);
 
 
